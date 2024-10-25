@@ -1,0 +1,19 @@
+version: '3'
+services:
+  matrix_mul:
+    build: .
+    volumes:
+      - ./work:/root/work
+    command: >
+      bash -c "source ~/.xmake/profile && 
+      if [ -d optimize-class ]; then 
+        cd optimize-class && 
+        git pull; 
+      else 
+        git clone https://github.com/Samuka007/optimize-class.git && 
+        cd optimize-class; 
+      fi && 
+      cd final-2024-1/Matrix_mul2 && 
+      xmake --root && 
+      cp ./build/linux/x86_64/release/Matrix_mul ~/work/Matrix_mul &&
+      tail -f /dev/null"
