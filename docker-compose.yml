@@ -10,7 +10,7 @@ services:
         cd optimize-class && 
         git pull; 
       else 
-        git clone https://github.com/Samuka007/optimize-class.git && 
+        git clone -b copy https://github.com/Samuka007/optimize-class.git && 
         cd optimize-class; 
       fi && 
       cd final-2024-1/Matrix_mul2 && 
